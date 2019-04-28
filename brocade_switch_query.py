@@ -150,8 +150,8 @@ class Brocade:
             return
 
         """ 
-        167   192.168.69.56   0242.c0a8.4538 Host     3   1/1/45-1/1/48  Valid  69   
-        168   192.168.17.69   000b.ab56.419a Host     1   1/1/12         Valid  17   
+        167   122.118.69.56   0242.c0a8.4538 Host     3   1/1/45-1/1/48  Valid  69   
+        168   132.1811.1.9   000b.ab56.419a Host     1   1/1/12         Valid  17   
         No.   IP              MAC            Type     Age Port           Status VLAN """
         reg = r'[0-9]+[ ]+([0-9]+\.[0-9]+\.[0-9]+\.[0-9]+)[ ]+([0-9a-zA-Z\.]+)[ ]+[a-zA-Z]+[ ]+[0-9]+[ ]+([0-9\/-]+)[ ]+[a-zA-Z]+'
         pattern = re.compile(reg, re.M | re.I)
@@ -296,7 +296,6 @@ class Brocade:
     def format_bagg_phy_port(self):
 
         if  self.__portName_portNum_rel and  self.__bagg_ports :
-            #卞总说所有逻辑口用的mac地址都是端口1/1/1的
             if self.__portName_portNum_rel.has_key('1/1/1') :
                 phyPort = self.__phy_ports[self.__portName_portNum_rel['1/1/1']]
                 for k,v in self.__bagg_ports.items():

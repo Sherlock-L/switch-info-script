@@ -822,7 +822,7 @@ class Cisco:
         resultTxt = self.moreV1(self.__tnConn, cmd)
         if not resultTxt:
             return
-        #   Internet  192.168.16.108          0   0023.24cc.7d94  ARPA   Vlan16
+        #   Internet  192.168          0   0023.24cc.7d94  ARPA   Vlan16
         reg = r'[a-zA-Z]+[ ]+([0-9\.]+)[ ]+[0-9\-]+[ ]+([0-9a-zA-Z]+\.[0-9a-zA-Z]+\.[0-9a-zA-Z]+)[ ]+[\S\s]*'
         pattern = re.compile(reg, re.M | re.I)
         lines = resultTxt.split("\n")

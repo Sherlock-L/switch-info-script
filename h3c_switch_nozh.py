@@ -655,7 +655,7 @@ class H3C:
         resultTxt = self.moreV1(self.__tnConn, cmd)
         if not resultTxt:
             return
-        #   192.168.16.3    487a-da74-f8e4 16         BAGG1                    1200  D
+        #   111.16.3    487a-da74-f8e4 16         BAGG1                    1200  D
         reg = r'([0-9]+\.[0-9]+\.[0-9]+\.[0-9]+)[ ]+([0-9a-zA-Z\-]+)[ ][0-9]+[ ]+([GE|XGE|FE|E0|E1|40GE]+[0-9\/]+|BAGG[0-9]+)[ ]+[\S\s]*'
         pattern = re.compile(reg, re.M | re.I)
         lines = resultTxt.split("\n")
